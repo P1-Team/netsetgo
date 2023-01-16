@@ -1,18 +1,13 @@
 package configurer_test
 
 import (
-	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gomega"
-	. "github.com/teddyking/netsetgo/configurer"
-	. "github.com/teddyking/netsetgo/netsetgo_suite_helpers"
-
 	"net"
 	"os/exec"
 
-	"code.cloudfoundry.org/guardian/kawasaki/netns"
+	"github.com/P1-Team/netsetgo"
+	"github.com/P1-Team/netsetgo/netns"
 	"github.com/onsi/gomega/gbytes"
 	"github.com/onsi/gomega/gexec"
-	"github.com/teddyking/netsetgo"
 )
 
 var _ = Describe("ContainerConfigurer", func() {

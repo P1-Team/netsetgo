@@ -4,7 +4,7 @@ package netsetgofakes
 import (
 	"sync"
 
-	"github.com/teddyking/netsetgo"
+	"github.com/P1-Team/netsetgo"
 )
 
 type FakeConfigurer struct {

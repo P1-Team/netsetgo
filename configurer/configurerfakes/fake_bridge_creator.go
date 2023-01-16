@@ -5,7 +5,7 @@ import (
 	"net"
 	"sync"
 
-	"github.com/teddyking/netsetgo/configurer"
+	"github.com/P1-Team/netsetgo/configurer"
 )
 
 type FakeBridgeCreator struct {

@@ -5,8 +5,8 @@ import (
 	"net"
 	"os"
 
-	"code.cloudfoundry.org/guardian/kawasaki/netns"
-	"github.com/teddyking/netsetgo"
+	"github.com/P1-Team/netsetgo"
+	"github.com/P1-Team/netsetgo/netns"
 	"github.com/vishvananda/netlink"
 )
 

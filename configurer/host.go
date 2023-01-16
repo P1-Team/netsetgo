@@ -3,7 +3,7 @@ package configurer
 import (
 	"net"
 
-	"github.com/teddyking/netsetgo"
+	"github.com/P1-Team/netsetgo"
 )
 
 //go:generate counterfeiter . BridgeCreator

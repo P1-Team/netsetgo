@@ -1,4 +1,4 @@
-package main
+package cmd
 
 import (
 	"flag"
@@ -6,10 +6,10 @@ import (
 	"net"
 	"os"
 
-	"code.cloudfoundry.org/guardian/kawasaki/netns"
-	"github.com/teddyking/netsetgo"
-	"github.com/teddyking/netsetgo/configurer"
-	"github.com/teddyking/netsetgo/device"
+	"github.com/P1-Team/netsetgo"
+	"github.com/P1-Team/netsetgo/configurer"
+	"github.com/P1-Team/netsetgo/device"
+	"github.com/P1-Team/netsetgo/netns"
 )
 
 func main() {
@@ -37,10 +37,10 @@ func main() {
 	netset := netsetgo.New(hostConfigurer, containerConfigurer)
 
 	bridgeIP, bridgeSubnet, err := net.ParseCIDR(bridgeAddress)
-	check(err)
+	Check(err)
 
 	containerIP, _, err := net.ParseCIDR(containerAddress)
-	check(err)
+	Check(err)
 
 	netConfig := netsetgo.NetworkConfig{
 		BridgeName:     bridgeName,
@@ -50,13 +50,13 @@ func main() {
 		VethNamePrefix: vethNamePrefix,
 	}
 
-	check(netset.ConfigureHost(netConfig, pid))
-	check(netset.ConfigureContainer(netConfig, pid))
+	Check(netset.ConfigureHost(netConfig, pid))
+	Check(netset.ConfigureContainer(netConfig, pid))
 }
 
-func check(err error) {
+func Check(err error) error {
 	if err != nil {
-		fmt.Printf("ERROR - %s\n", err.Error())
-		os.Exit(1)
+		return err
 	}
+	return nil
 }
